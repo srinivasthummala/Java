@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="user" value="my name "></parameter>
+	<test thread-count="5" name="Test" allow-return-values="false">
+		<groups>
+			<run>
+				<exclude name="functest" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.testng.MyTest" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="parameter">
+		<parameter name="user" value="my name is srinivas"></parameter>
+		<classes>
+			<class name="com.testng.MyTest">
+				<methods>
+					<include name="testMethod4"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
