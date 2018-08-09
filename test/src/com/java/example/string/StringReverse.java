@@ -13,6 +13,7 @@ public class StringReverse {
 		reverseString2("thummala srinu");
 	}
 
+	//Using iterative method
 	public void reverseString(String str) {
 
 		int length = str.length();
@@ -25,6 +26,7 @@ public class StringReverse {
 		System.out.println(s);
 	}
 
+	//Using iterative method
 	public void reverseString1(String str) {
 
 		int length = str.length();
@@ -36,12 +38,14 @@ public class StringReverse {
 
 	}
 
+	//Using StringBuffer class
 	public void reverseString2(String str) {
 
 		StringBuilder sb = new StringBuilder(str);
 		System.out.println(sb.reverse());
 	}
 
+	//Using recursive method.
 	public String reverseString3(String str) {
 
 		if (str == null || str.length() <= 1)
@@ -49,6 +53,7 @@ public class StringReverse {
 		return reverseString3(str.substring(1)) + str.charAt(0);
 	}
 
+	//Using iterative method
 	public void reverseString4(String str) {
 
 		int length = str.length();
