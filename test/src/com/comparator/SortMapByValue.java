@@ -26,6 +26,7 @@ public class SortMapByValue {
 		Set<Entry<String, Integer>> set = map.entrySet();
 		List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(set);
 		System.out.println(list);
+		
 		Comparator<Entry<String, Integer>> valueComparator = (Entry<String, Integer> o1,
 				Entry<String, Integer> o2) -> o1.getValue().compareTo(o2.getValue());
 		Collections.sort(list, valueComparator);
