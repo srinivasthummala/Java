@@ -17,7 +17,7 @@ public class SortMapByValue {
 	@Test
 	public void method1() {
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("java", 20);
+		map.put("Java", 20);
 		map.put("C++", 45);
 		map.put("Java2Novice", 2);
 		map.put("Unix", 67);
@@ -26,6 +26,8 @@ public class SortMapByValue {
 		Set<Entry<String, Integer>> set = map.entrySet();
 		List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(set);
 		System.out.println(list);
+		list.sort((Entry<String, Integer> e1, Entry<String, Integer> e2)->e1.getKey().compareTo(e2.getKey()));
+		list.forEach(System.out::println);
 		
 		Comparator<Entry<String, Integer>> valueComparator = (Entry<String, Integer> o1,
 				Entry<String, Integer> o2) -> o1.getValue().compareTo(o2.getValue());
