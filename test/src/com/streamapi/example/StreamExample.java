@@ -1,6 +1,7 @@
 package com.streamapi.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class StreamExample {
 
-	@Test
+	//@Test
 	public void testStreamFilter() {
 
 		List<Integer> l1 = new ArrayList<>();
@@ -34,7 +35,7 @@ public class StreamExample {
 
 	}
 
-	@Test
+	//@Test
 	public void testStreamMap() {
 
 		List<String> l1 = new ArrayList<>();
@@ -48,7 +49,7 @@ public class StreamExample {
 
 	}
 
-	@Test
+	//@Test
 	public void testStreamSorted() {
 
 		List<String> l1 = new ArrayList<>();
@@ -70,7 +71,7 @@ public class StreamExample {
 
 	}
 
-	@Test
+	//@Test
 	public void streamMax() {
 
 		List<Integer> l1 = new ArrayList<>();
@@ -87,8 +88,8 @@ public class StreamExample {
 		System.out.println(min);
 
 	}
-	
-	@Test
+
+	//@Test
 	public void streamForEach() {
 
 		List<Integer> l1 = new ArrayList<>();
@@ -97,8 +98,17 @@ public class StreamExample {
 		}
 		System.out.println(l1);
 
-		l1.stream().forEach(i->System.out.println(i));
+		l1.stream().forEach(i -> System.out.println(i));
 
-		
+	}
+
+	@Test
+	public void evenNums() {
+		List<String> numbers = Arrays.asList("1", "2", "3", "4", "5", "6");
+		System.out.println("original list: " + numbers);
+		List<Integer> even = numbers.stream().map(s -> Integer.valueOf(s)).filter(number -> number % 2 == 0)
+				.collect(Collectors.toList());
+		System.out.println("processed list, only even numbers: " + even);
+
 	}
 }
